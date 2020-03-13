@@ -1,6 +1,6 @@
 <?php
 
-	$connection = mysqli_connect('localhost','usr','pwd','dbRam');
+	require_once('connection.php');
 	$itemId = $_REQUEST["itemId"];
 	$description = $_REQUEST["description"];
 	$stockQuantity = $_REQUEST["stockQuantity"];
@@ -20,9 +20,5 @@
 		echo "Updated successfully";
 	}
 
-
-	// mysqli_query($db, $query);
-	// echo "Record added successfully.";
-	mysqli_close($db); 
 ?>
 
