@@ -1,0 +1,23 @@
+<!--Show item details when we enter Item ID. -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Item Details
+	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		function showDetail()
+		{
+			$.ajax("PrintItem.php?itemId=" + $("#itemId").val(), {success: function(result)
+				{
+					$("#Description").html(result);
+				}});
+		}
+	</script>
+</head>
+<body onkeyup="showDetail()">
+	<input type="text" id="itemId" name="itemId" placeholder="Enter Item ID"><br>
+	<div id="Description"></div>
+</body>
+</html>

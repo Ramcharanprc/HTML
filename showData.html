@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+	function showDescription()
+	{
+		$.ajax("PrintItem.php?userName=" + $("#userName").val(), {success: function(result)
+			{
+				// $("#Description").html(result);
+				$("#Description").html(result);
+			}
+		// var http = new XMLHttpRequest();
+		// http.onreadystatechange = function()
+		// {
+		// 	if(this.readyState == 4 && this.status == 200)
+		// 	{
+		// 		document.getElementById("Description").innerHTML = this.responseText;
+		// 	}
+		// };
+		// http.open("GET", URL, true);
+		// http.send();
+	});}
+</script>
+</head>
+<body>
+		<input type=text name=userName id=userName>
+		<button onclick="showDescription()">Submit</button>
+		<div id=Description></div>
+</body>
+</html>
